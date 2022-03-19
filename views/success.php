@@ -33,7 +33,16 @@ include 'includes/navbar.php';
       <div class="successnotifcard">
         <img src="../assets/images/logo.png" alt="logo" />
         <i class="fa-solid fa-xmark" id="closeModel"></i>
-        <div class="notifMsg"></div>
+        <div class="notifMsg">
+
+            <!-- fetch tickets here 
+            `<div class="notifLine">
+            <img src="./assets/ticket.png" alt="ticket" />
+            <p>Ticket N° <span>${index + 1}</span> :</p>
+            <p class="ticketnumber">${e}</p>
+          </div>`; -->
+
+        </div>
       </div>
     </div>
 <div class="headers">
