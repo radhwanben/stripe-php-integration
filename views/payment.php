@@ -4,6 +4,12 @@ include 'includes/header.php';
 include 'includes/navbar.php';
 
 ?>
+        <div class="notification">
+      <div class="notifCard">
+        <i class="fa-solid fa-xmark" id="closeModel"></i>
+        <p class="notifMsg"></p>
+      </div>
+    </div>
     <header>
       <div class="header">
         <h1>Immobilier <span>à Dubai</span></h1>
@@ -17,12 +23,18 @@ include 'includes/navbar.php';
         </div>
       </div>
     </header>
+        <div class="videomobile">
+      <i class="fa-solid fa-circle-pause" id="pausePlay2"></i>
+      <video autoplay muted loop id="mobileVideo">
+        <source src="./assets/video/vid1.mp4" type="video/mp4" />
+      </video>
+    </div>
     <section class="formulaire">
       <div class="formHeader">
         <h1>Formulaire de téléchargement</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
-      <form autocomplete="off" action="../class/checking.php" method="POST">
+      <form autocomplete="off" action="../class/checking.php" method="POST" name="myForm">
         <div class="leftForm">
           <div class="formLine">
             <input
@@ -30,23 +42,26 @@ include 'includes/navbar.php';
               name="Nom"
               id="name"
               placeholder="Nom et Prénom"
+              required
             />
             <input 
             type="email" 
             name="email" 
             id="email" 
-            placeholder="Email" />
+            placeholder="Email" 
+            required/>
           </div>
           <div class="formLine">
             <input 
             id="phone" 
             type="tel" 
-            name="tel" />
+            name="tel" required/>
             <input
               type="text"
               name="adress"
               id="street"
               placeholder="Adresse de la Rue"
+              required
             />
           </div>
           <div class="formLine">
@@ -54,16 +69,17 @@ include 'includes/navbar.php';
             id="city" 
             type="text" 
             name="city" 
-                placeholder="Cité" />
+                placeholder="Cité" required/>
             <input
               type="text"
               name="state"
               id="state"
               placeholder="Etat / Provenance"
+              required
             />
           </div>
           <div class="formLine">
-            <select id="country" name="country">
+            <select id="country" name="country" required>
               <option value="Afganistan">Afghanistan</option>
               <option value="Albania">Albania</option>
               <option value="Algeria">Algeria</option>
@@ -328,6 +344,7 @@ include 'includes/navbar.php';
               name="zipCode"
               id="zipCode"
               placeholder="Code Postal"
+              required
             />
           </div>
         </div>
@@ -346,12 +363,18 @@ include 'includes/navbar.php';
               <h2>Ticket</h2>
               <p>add ticket quantity</p>
               <div class="quantity">
-                <i class="fa-solid fa-caret-left"></i>
-                <input type="number" name="quantity" id="quantity" />
-                <i class="fa-solid fa-caret-right"></i>
+                <i class="fa-solid fa-caret-left" id="minus"></i>
+                <input type="number" name="quantity" id="quantity" value="1" min="1" required />
+                <i class="fa-solid fa-caret-right" id="plus"></i>
               </div>
             </div>
             <img src="../assets/images/ticket.png" alt="ticket" />
+          </div>
+          <div class="line3">
+            <p class="ticketsBonus"></p>
+            <p class="secondMsg"></p>
+            <p class="price">Price : <span class="oldprice"></span></p>
+            <button type="submit" id="submitBtn">Buy</button>
           </div>
         </div>
       </form>
