@@ -222,13 +222,84 @@
     width: 100%;
   }
 }
+/*=============notif======================*/
+.successnotif {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1000000;
+}
+.successnotifcard {
+  width: 40%;
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #fff;
 
+  /* font-family: "Montserrat", sans-serif; */
+  position: relative;
+  border-radius: 25px;
+}
+#closeModel {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  font-size: 20px;
+  color: #d1a046;
+  cursor: pointer;
+}
+.successnotifcard > img {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  width: 30px;
+}
+.notifMsg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.notifLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notifLine > img {
+  width: 50px;
+  margin-right: 10px;
+}
+.notifLine > p {
+  font-size: 14px;
+  color: #94a2ab;
+}
+.notifLine .ticketnumber {
+  color: #000;
+  font-weight: 600;
+}
+@media screen and (max-width: 768px) {
+  .successnotifcard {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 570px) {
+  .successnotifcard {
+    width: 80%;
+  }
+}
 /*=====Header section====================================================================================*/
 .headers {
   background: linear-gradient(rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0.8) 100%),
-    url("../images/headers.jpeg");
+    url("./assets/header.jpg");
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
   display: flex;
   height: 50vh;
   width: 100%;
@@ -306,15 +377,16 @@
 }
 .box1 > h1 {
   font-size: 50px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
   margin-bottom: 20px;
 }
 .box1 > p {
   font-size: 20px;
   font-weight: 400;
-  line-height: 20px;
+  /* line-height: 20px; */
   color: #666666;
+  margin-top: 15px;
 }
 .box2 {
   display: flex;
@@ -338,6 +410,13 @@
   color: #000;
   font-weight: 500;
   margin-right: 20px;
+}
+#tickets {
+  padding: 15px 25px;
+  background-color: #fff;
+  border: 1px solid #94a8ab;
+  cursor: pointer;
+  border-radius: 12px;
 }
 #succFacture > a {
   font-size: 20px;
@@ -394,12 +473,23 @@
   padding: 2px;
   border-radius: 5px;
 }
-.fa-facebook,
-.fa-linkedin {
+.fa-facebook {
   font-size: 20px;
   color: #3b5998;
   padding: 5px;
   border-radius: 5px;
+}
+.fa-twitter {
+  font-size: 20px;
+  color: #1da1f2;
+  padding: 5px;
+  border-radius: 5px;
+}
+.fa-whatsapp-square {
+  color: #25d366;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 25px;
 }
 .box5 {
   margin-top: 50px;
@@ -460,10 +550,13 @@
   #succTickets {
     font-size: 16px;
   }
+  .title {
+    margin-right: 10px;
+  }
   #succFacture > a {
     font-size: 16px;
   }
-  #changed > select {
+  #changed > #tickets {
     margin-top: 15px;
   }
   .slink > p {

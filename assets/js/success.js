@@ -42,7 +42,10 @@ let successEmail = document.getElementById("succEmail");
 let successPhone = document.getElementById("succPhone");
 let successFacture = document.getElementById("succFacture");
 let nbrTickets = document.getElementById("succTickets");
-let listTickets = document.getElementById("tickets");
+let ticketBtn = document.getElementById("tickets");
+let notif = document.querySelector(".successnotif");
+let notifMsg = document.querySelector(".notifMsg");
+let closeModel = document.getElementById("closeModel");
 
 let responseData = {
   email: "example@example.com",
@@ -61,11 +64,23 @@ let responseData = {
 let showTickets = `<option value="" disabled selected>Your tickets list</option>`;
 
 responseData.tickets.map((e, index) => {
-  showTickets += `<option> Ticket N° ${index + 1} : ${e} </option>`;
+  showTickets += `<div class="notifLine">
+            <img src="./assets/ticket.png" alt="ticket" />
+            <p>Ticket N° <span>${index + 1}</span> :</p>
+            <p class="ticketnumber">${e}</p>
+          </div>`;
 });
 
 successEmail.innerText = responseData.email;
 successPhone.innerText = responseData.phone;
-successFacture.innerHTML = `<a href="${responseData.facture}" target="_blank">${responseData.facture}</a>`;
+successFacture.innerHTML = `<a href="${responseData.facture}" target="_blank">ma facture</a>`;
 nbrTickets.innerText = responseData.number_of_tickets;
-listTickets.innerHTML = showTickets;
+notifMsg.innerHTML = showTickets;
+
+ticketBtn.addEventListener("click", () => {
+  notif.style.visibility = "visible";
+});
+
+closeModel.addEventListener("click", () => {
+  notif.style.visibility = "hidden";
+});

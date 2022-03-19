@@ -29,6 +29,13 @@ include 'includes/navbar.php';
 
 <link rel="stylesheet" href="../assets/css/successstyle.css" />
 
+    <div class="successnotif">
+      <div class="successnotifcard">
+        <img src="../assets/images/logo.png" alt="logo" />
+        <i class="fa-solid fa-xmark" id="closeModel"></i>
+        <div class="notifMsg"></div>
+      </div>
+    </div>
 <div class="headers">
       <div class="columnOne">
         <div class="jjj"></div>
@@ -60,7 +67,7 @@ include 'includes/navbar.php';
           <div class="succLine">
             <div class="title">Facture :</div>
             <div id="succFacture">
-                <a href="<?php  echo $data->facture;?>" target="_blank">Facture</a>
+                <a href="<?php  echo $data->facture;?>" target="_blank">ma facture</a>
             </div>
           </div>
           <div class="succLine" id="changed">
@@ -68,21 +75,21 @@ include 'includes/navbar.php';
             <div id="succTickets">
             <?php echo $data->number_of_tickets; ?>
             </div>
-            <select name="tickets" id="tickets">
+            <div id="tickets">Your ticket list</div>
             
-            <?php
+            <!-- <?php
             
-                foreach($tickets as $ticket)
-                {
-                    echo "<option>" . $ticket . "</option>";
-                }
-            ?>
+                // foreach($tickets as $ticket)
+                // {
+                //     echo "<option>" . $ticket . "</option>";
+                // }
+            ?> -->
             
             </select>
           </div>
         </div>
         <div class="box3">
-          <img src="../assets/images/ticketgif.gif" alt="gif" />
+          <img src="../assets/images/finalgif.gif" alt="gif" />
           <p>Partagez avec vos proches :</p>
         </div>
         <div class="box4">
@@ -94,12 +101,12 @@ include 'includes/navbar.php';
             </div>
           </div>
           <div class="slink">
-            <i class="fa-brands fa-linkedin"></i>
-            <p>linked in</p>
+            <i class="fa-brands fa-whatsapp-square"></i>
+            <p>whatsapp</p>
           </div>
           <div class="slink">
-            <i class="fa-brands fa-instagram"></i>
-            <p>instagram</p>
+            <i class="fa-brands fa-twitter"></i>
+            <p>twitter</p>
           </div>
         </div>
         <div class="box5">
