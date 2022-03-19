@@ -261,7 +261,7 @@ input::-webkit-inner-spin-button {
 header {
   min-height: 50vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4) 100%, rgba(0, 0, 0, 0.4) 100%),
-    url("../images/header.jpeg");
+    url("./assets/header.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -432,15 +432,16 @@ form {
   line-height: 20px;
 }
 .line2 {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .line2 > img {
-  width: 30%;
+  width: 28%;
   border-radius: 9px;
 }
 .line2 > .line2__mid {
-  width: 35%;
+  margin: 0 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -477,7 +478,7 @@ form {
   color: #72808a;
 }
 .line3 {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -487,6 +488,7 @@ form {
   outline: none;
   border: none;
   padding: 15px 45px;
+  margin-top: -60px;
   background-color: #d1a046;
   color: #fff;
   font-weight: 600;
@@ -519,23 +521,63 @@ form {
   color: #d1a046;
   font-weight: 600;
 }
+.line4 {
+  display: flex;
+  width: 90%;
+  justify-content: flex-start;
+  text-align: start;
+  margin: 25px;
+  margin-left: 45px;
+}
+.wordPrice {
+  font-size: 20px;
+  font-weight: 600;
+}
+.paraPrice {
+  font-size: 16px;
+  color: #9d9fa0;
+  margin-bottom: 10px;
+}
+.priceDiv select {
+  outline: none;
+  border: 1px solid #9d9fa0;
+  padding: 5px;
+  margin-right: -5px;
+  height: 35px;
+  cursor: pointer;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.priceDiv input {
+  padding: 5px;
+  outline: none;
+  border: 1px solid #9d9fa0;
+  padding: 5px;
+  background-color: #fff;
+  width: 65px;
+  height: 35px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.priceBox {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 520px) {
   .line2 {
     width: 100%;
     flex-direction: column;
     align-items: center;
   }
-  .line2 > img:nth-child(1) {
-    width: 90%;
-    margin: 10px auto;
-  }
-  .line2 > img:nth-child(2) {
-    width: 250px;
-    margin: 0 auto;
+  .line2 > img {
+    width: 220px;
+    margin: 0px auto;
   }
   .line2 > .line2__mid {
     width: 90%;
-    margin: 10px auto;
+    margin: 30px auto;
+    margin-bottom: -50px;
     align-items: center;
   }
 }
@@ -548,6 +590,9 @@ form {
   #phone {
     width: 220px !important;
     margin-right: 30px;
+  }
+  .rightForm {
+    padding: 15px;
   }
 }
 @media screen and (max-width: 985px) {
@@ -597,6 +642,12 @@ form {
   #phone {
     width: 250px !important;
     margin-right: 0px;
+  }
+  .line3 > button {
+    margin-top: 0;
+  }
+  .line4 {
+    margin-top: -40px;
   }
 }
 @media screen and (max-width: 562px) {

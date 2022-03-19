@@ -357,7 +357,7 @@ include 'includes/navbar.php';
             </p>
           </div>
           <div class="line2">
-            <img src="../assets/images/e-book.jpg" alt="e-book" id="ebook" />
+            <img src="../assets/images/ebookTwo.png" alt="e-book" id="ebook" />
             <div class="line2__mid">
               <h2>Book Name</h2>
               <h2>Ticket</h2>
@@ -370,10 +370,27 @@ include 'includes/navbar.php';
             </div>
             <img src="../assets/images/ticket.png" alt="ticket" />
           </div>
+           <div class="line4">
+            <div class="priceDiv">
+              <p class="wordPrice">Price</p>
+              <p class="paraPrice">Select a currency</p>
+              <div class="pricebox">
+                <select name="curr" id="curr">
+                  <option value="euro">&euro;</option>
+                </select>
+                <input
+                  type="text"
+                  name="priceT"
+                  id="priceT"
+                  value="0"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
           <div class="line3">
             <p class="ticketsBonus"></p>
             <p class="secondMsg"></p>
-            <p class="price">Price : <span class="oldprice"></span></p>
             <button type="submit" id="submitBtn">Buy</button>
           </div>
         </div>

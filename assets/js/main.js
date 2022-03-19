@@ -111,22 +111,22 @@ let secondMsg = document.querySelector(".secondMsg");
 let minus = document.getElementById("minus");
 let plus = document.getElementById("plus");
 let nbrTicket = document.getElementById("quantity");
-let oldPrice = document.querySelector(".oldprice");
-let newPrice = document.querySelector(".newprice");
+let priceInput = document.getElementById("priceT");
 let price = 15;
-oldPrice.innerHTML = `${price} &euro;`;
+
+priceInput.value = price;
 nbrTicket.addEventListener("keyup", () => {
   let ticketNumber = Math.floor(nbrTicket.value / 4);
   if (nbrTicket.value < 4) {
     bonusPara.innerHTML = `Si vous achetez 4 vous aurez 1 ticket bonus`;
-    oldPrice.innerHTML = `${price * nbrTicket.value} &euro;`;
+    priceInput.value = price * nbrTicket.value;
   } else {
     bonusPara.innerHTML = `<span>${ticketNumber}</span> ticket bonus.
     Si vous achetez ${(ticketNumber + 1) * 4} tickets vous aurez <span>${
       ticketNumber + 1
     }</span> tickets bonus
     `;
-    oldPrice.innerHTML = `${price * nbrTicket.value} &euro;`;
+    priceInput.value = price * nbrTicket.value;
   }
 });
 
@@ -134,32 +134,10 @@ minus.addEventListener("click", () => {
   if (nbrTicket.value > 1) {
     nbrTicket.value--;
   }
-  let ticketNumber = Math.floor(nbrTicket.value / 4);
-  if (nbrTicket.value < 4) {
-    bonusPara.innerHTML = `Si vous achetez 4 vous aurez 1 ticket bonus`;
-    oldPrice.innerHTML = `${price * nbrTicket.value} &euro;`;
-  } else {
-    bonusPara.innerHTML = `<span>${ticketNumber}</span> ticket bonus.
-    Si vous achetez ${(ticketNumber + 1) * 4} tickets vous aurez <span>${
-      ticketNumber + 1
-    }</span> tickets bonus
-    `;
-    oldPrice.innerHTML = `${price * nbrTicket.value} &euro;`;
-  }
+  priceInput.value = price * nbrTicket.value;
 });
 
 plus.addEventListener("click", () => {
   nbrTicket.value++;
-  let ticketNumber = Math.floor(nbrTicket.value / 4);
-  if (nbrTicket.value < 4) {
-    bonusPara.innerHTML = `Si vous achetez 4 vous aurez 1 ticket bonus`;
-    oldPrice.innerHTML = `${price * nbrTicket.value} &euro;`;
-  } else {
-    bonusPara.innerHTML = `<span>${ticketNumber}</span> ticket bonus.
-    Si vous achetez ${(ticketNumber + 1) * 4} tickets vous aurez <span>${
-      ticketNumber + 1
-    }</span> tickets bonus
-    `;
-    oldPrice.innerHTML = `${price * nbrTicket.value} &euro;`;
-  }
+  priceInput.value = price * nbrTicket.value;
 });
