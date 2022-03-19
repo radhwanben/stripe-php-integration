@@ -296,7 +296,7 @@
 /*=====Header section====================================================================================*/
 .headers {
   background: linear-gradient(rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0.8) 100%),
-    url("./assets/header.jpg");
+    url("../images/header.jpg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -437,7 +437,7 @@
   margin-bottom: 30px;
 }
 .box3 > img {
-  width: 232px;
+  width: 270px;
   border-radius: 12px;
 }
 .box3 > p {

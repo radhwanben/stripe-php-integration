@@ -399,3 +399,4 @@ include 'includes/navbar.php';
     <?php
     include 'includes/footer.php';
 ?>
+<script src="../assets/js/main.js"></script>

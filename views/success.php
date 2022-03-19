@@ -15,12 +15,12 @@
     //var_dump($tickets);
 
 
-    $recieverEmail = $data->email;
-    $subject = "FROM STRIPE";
-    $body = "<h1>im H1</h1>";
+    // $recieverEmail = $data->email;
+    // $subject = "FROM STRIPE";
+    // $body = "<h1>im H1</h1>";
     
-    $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
-    $mailer->sendMail($recieverEmail,$subject,$body);
+    // $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
+    // $mailer->sendMail($recieverEmail,$subject,$body);
 
 include 'includes/header.php';
 include 'includes/navbar.php';
@@ -34,7 +34,7 @@ include 'includes/navbar.php';
         <img src="../assets/images/logo.png" alt="logo" />
         <i class="fa-solid fa-xmark" id="closeModel"></i>
         <div class="notifMsg">
-
+            <!-- TODO: UNCOMMENT AND MAKE IT WORKS WITH PHP SCRIPT! -->>
             <!-- fetch tickets here 
             `<div class="notifLine">
             <img src="./assets/ticket.png" alt="ticket" />
@@ -127,4 +127,6 @@ include 'includes/navbar.php';
 
     <?php
     include './includes/footer.php';
+    
 ?>
+<script src="../assets/js/success.js"></script>
