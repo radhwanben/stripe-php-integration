@@ -34,14 +34,15 @@ include 'includes/navbar.php';
         <img src="../assets/images/logo.png" alt="logo" />
         <i class="fa-solid fa-xmark" id="closeModel"></i>
         <div class="notifMsg">
-            <!-- TODO: UNCOMMENT AND MAKE IT WORKS WITH PHP SCRIPT! -->>
-            <!-- fetch tickets here 
-            `<div class="notifLine">
-            <img src="./assets/ticket.png" alt="ticket" />
-            <p>Ticket N° <span>${index + 1}</span> :</p>
-            <p class="ticketnumber">${e}</p>
-          </div>`; -->
-
+          <?php for ($i = 0; $i < count($tickets); $i++) {  
+            echo "<div class='notifLine'>
+              <img src='../assets/images/ticket.png' alt='ticket'/>
+              <p>Ticket N° <span>$i</span> : </p>
+              <p class='ticketnumber'>$tickets[$i]</p>
+            </div>";
+          }
+            ?>
+            
         </div>
       </div>
     </div>
