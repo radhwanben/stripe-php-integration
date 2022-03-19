@@ -1,0 +1,204 @@
+/*General Styles of the page*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+*::selection {
+  background-color: var(--priamry);
+  color: #fff;
+}
+/*CSS variables for easy manipulation*/
+:root {
+  /*colors*/
+  --priamry: #d1a046;
+  --secondary: #494646;
+  --white: #fff;
+  --black: #000;
+}
+/*==============================================SUCCESSS===================================================*/
+.success {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.successCard {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.box1 > i {
+  font-size: 100px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  color: var(--priamry);
+  margin-bottom: 30px;
+}
+.box1 > h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif !important;
+}
+.box1 > p {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif !important;
+  color: #666666;
+  margin-top: 15px;
+}
+.box2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+  margin-bottom: 30px;
+}
+.succLine {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.title {
+  font-size: 20px;
+  color: #94a8ab;
+  margin-right: 30px;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 700;
+}
+#succEmail,
+#succPhone,
+#succTickets {
+  font-size: 20px;
+  color: #000;
+  font-weight: 400;
+  margin-right: 20px;
+  font-family: "Poppins", sans-serif !important;
+}
+#tickets {
+  padding: 15px 25px;
+  background-color: #fff;
+  border: 1px solid #94a8ab;
+  cursor: pointer;
+  border-radius: 12px;
+}
+#succFacture > a {
+  font-size: 20px;
+  color: #2ca6ff;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif !important;
+}
+.succLine > select {
+  outline: none;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 15px 25px;
+}
+.box3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box3 > img {
+  width: 280px;
+  border-radius: 12px;
+}
+.box3 > p {
+  font-size: 16px;
+  color: #94a8ab;
+  margin-top: 10px;
+}
+.box4 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.slink {
+  cursor: pointer;
+  font-size: 16px;
+  color: #c4c4c4;
+  display: flex;
+  align-items: center;
+}
+.slink > i {
+  margin-right: 10px;
+}
+.slink > .fa-instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  color: white;
+  padding: 2px;
+  border-radius: 5px;
+}
+.fa-facebook {
+  font-size: 20px;
+  color: #3b5998;
+  padding: 5px;
+  border-radius: 5px;
+}
+.fa-twitter {
+  font-size: 20px;
+  color: #1da1f2;
+  padding: 5px;
+  border-radius: 5px;
+}
+.fa-whatsapp-square {
+  color: #25d366;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 25px;
+}
+.box5 {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box5 > p {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 30px;
+}
+.box5 > button {
+  outline: none;
+  border: none;
+  width: fit-content;
+  border-radius: 5px;
+  background-color: #d1a046;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 15px 55px;
+  transition: all ease-in-out 0.3s;
+}
+.box5 > button:hover {
+  background-color: #ffc861;
+  transition: all ease-in-out 0.3s;
+}
+.box1,
+.box2,
+.box3,
+.box4,
+.box5 {
+  width: 500px;
+}
