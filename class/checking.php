@@ -1,7 +1,7 @@
 <?php
 
-require '../vendor/autoload.php';
-require '../config/config.php';
+require 'vendor/autoload.php';
+require 'config/config.php';
 
 require 'Ticket.php';
 require 'TempTicket.php';
@@ -109,7 +109,7 @@ function getFreeTicketsNumberV2($quantity){
   else {return 0;}   
 }
 
-$data = generateDiscount($quantity , 3000 );
+$data = generateDiscount($quantity , 2990 );
 if (!empty($data)) {
   $checkout_session = \Stripe\Checkout\Session::create([
       'line_items' => [[
