@@ -114,8 +114,16 @@
   align-items: center;
 }
 .box3 > img {
-  width: 280px;
+  width: 428px;
   border-radius: 12px;
+}
+.box3 > .shadowP {
+  width: 255px;
+  height: 31px;
+  background: #b6b4b4;
+  filter: blur(25px);
+  margin-top: -15px;
+  margin-bottom: 20px;
 }
 .box3 > p {
   font-size: 16px;

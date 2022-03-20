@@ -84,12 +84,27 @@ let phone_format = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
 let error = "";
 
 submitBtn.addEventListener("click", (e) => {
-  if (form.email.value === "" || !form.email.value.match(mail_format)) {
+  if (form.name.value === "") {
+    e.preventDefault();
+    error = "Vous devez entrer un nom.";
+  } else if (form.email.value === "" || !form.email.value.match(mail_format)) {
     e.preventDefault();
     error = "Vous devez entrer un email valid.";
   } else if (form.phone.value === "" || !form.phone.value.match(phone_format)) {
     error = "Vous devez entrer un numéro de téléphone valid.";
     e.preventDefault();
+  } else if (form.street.value === "") {
+    e.preventDefault();
+    error = "Vous devez entrer une addresse de Rue.";
+  } else if (form.city.value === "") {
+    e.preventDefault();
+    error = "Vous devez entrer votre cité.";
+  } else if (form.state.value === "") {
+    e.preventDefault();
+    error = "Vous devez entrer votre Etat/Provenance.";
+  } else if (form.zipCode.value === "") {
+    e.preventDefault();
+    error = "Vous devez entrer votre code postal";
   } else if (form.ticket.value < 1) {
     error = "Vous devez entrer un nombre de tickets supérieure à 0.";
     e.preventDefault();

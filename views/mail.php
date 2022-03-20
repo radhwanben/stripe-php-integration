@@ -31,7 +31,8 @@ include 'includes/header.php';
           </div>
         </div>
         <div class="box3">
-          <img src="./assets/finalgif.gif" alt="gif" />
+          <img src="../assets/images/finalgif.gif" alt="gif" />
+          <div class="shadowP"></div>
           <p>Partagez avec vos proches :</p>
         </div>
         <div class="box4">

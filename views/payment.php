@@ -6,6 +6,7 @@ include 'includes/navbar.php';
 ?>
         <div class="notification">
       <div class="notifCard">
+        <img src="./assets/logo.png" alt="logo" />
         <i class="fa-solid fa-xmark" id="closeModel"></i>
         <p class="notifMsg"></p>
       </div>
