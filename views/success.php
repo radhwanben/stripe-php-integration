@@ -3,15 +3,18 @@
     require 'vendor/autoload.php';
     require 'config/config.php';
     require 'class/Mail.php';
+    require 'class/TempTicket.php';
     
     \Stripe\Stripe::setApiKey('sk_test_51KbQ7zELeKscvw05hR8BK7dsl7C5tWFRvTKIau7EgayTzgONsIDJPrFjKQR1qlWoBpWY3HsVCIItL4wSqRnDUBBU005o2ytVOh');
 
     $session = \Stripe\Checkout\Session::retrieve($_GET['session_id']);
-    sleep(2);
+    // sleep(2);
     $customer = \Stripe\Customer::retrieve($session->customer);
     $data = $customer->metadata;
    // echo $data->facture;
-    $tickets =json_decode($data->tickets);
+   $Tickets = new TempTicket();
+    // $tickets =json_decode($data->tickets);
+   $tickets = json_decode($Tickets->getAllTickets($customer->id));
     //var_dump($tickets);
 
 
