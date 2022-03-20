@@ -362,21 +362,21 @@ include 'includes/navbar.php';
             <div class="line2__mid">
               <h2>Book Name</h2>
               <h2>Ticket</h2>
-              <p>add ticket quantity</p>
+              <p>Nombre de tickets </p>
               <div class="quantity">
                 <i class="fa-solid fa-caret-left" id="minus"></i>
-                <input type="number" name="quantity" id="quantity" value="1" min="1" required />
+                <input type="number" name="quantity" id="quantity" min="1" required />
                 <i class="fa-solid fa-caret-right" id="plus"></i>
               </div>
             </div>
-            <img src="../assets/images/ticket.png" alt="ticket" />
+            <img src="../assets/images/ticket.png" alt="ticket" id="ticketImg"/>
           </div>
            <div class="line4">
             <div class="priceDiv">
-              <p class="wordPrice">Price</p>
-              <p class="paraPrice">Select a currency</p>
+              <p class="wordPrice">Prix</p>
+              <!-- <p class="paraPrice">Select a currency</p> -->
               <div class="pricebox">
-                <select name="curr" id="curr">
+                <select name="curr" id="curr" disabled>
                   <option value="euro">&euro;</option>
                 </select>
                 <input
