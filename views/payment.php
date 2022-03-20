@@ -35,7 +35,7 @@ include 'includes/navbar.php';
         <h1>Formulaire de téléchargement</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
-      <form autocomplete="off" action="../class/checking.php" method="POST" name="myForm">
+      <form autocomplete="off" action="/checkout" method="POST" name="myForm">
         <div class="leftForm">
           <div class="formLine">
             <input
