@@ -14,7 +14,7 @@
    // echo $data->facture;
    $Tickets = new TempTicket();
     // $tickets =json_decode($data->tickets);
-   $tickets = json_decode($Tickets->getAllTickets($customer->id));
+   $tickets = $Tickets->getAllTickets($customer->id);
     //var_dump($tickets);
 
 
