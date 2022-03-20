@@ -45,10 +45,17 @@ require_once('class/Database.php');
     ticketcode varchar(200) NOT NULL,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
+    $tempTable = "CREATE TABLE IF NOT EXISTS tempTickets (
+      id VARCHAR(50) PRIMARY KEY,
+      email VARCHAR(50) NOT NULL,
+      ticketcode varchar(99999) NOT NULL,
+      reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      )";
     // use exec() because no results are returned
     $db->exec($clients);
     $db->exec($campaigns);
     $db->exec($tickets);
+    $db->exec($tempTable);
 
     echo "Tables created successfully";
 } catch(PDOException $e) {

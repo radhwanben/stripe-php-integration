@@ -13,6 +13,7 @@
 
 require 'vendor/autoload.php';
 require 'class/Ticket.php';
+require 'class/TempTicket.php';
 require 'class/Campaign.php';
 require 'class/Client.php';
 
@@ -39,7 +40,10 @@ function getTicketsNumber($quantity){
   }
     
 }
-
+function getTickets($customer_id){
+  $tempTicket = new TempTicket();
+  return $tempTicket->getAllTickets($customer_id);
+}
 function insertTickets($quantity,$email){
     $Ticket = new Ticket();
     $ticketGenerates =array();
@@ -140,9 +144,10 @@ switch ($event->type) {
     $data = getCustomer($paymentIntent->customer);
     $amount_received = $paymentIntent->amount_received;
     $status = $paymentIntent->status;
-    $number_tickets = getTicketsNumber($data->quantity);
+    // $number_tickets = getTicketsNumber($data->quantity);
     // $ticketlist = insertClients($number_tickets,$data);
-    $ticketlist = generateTicketCodes($number_tickets);
+    // $ticketlist = generateTicketCodes($number_tickets);
+    $ticketlist = getTickets($paymentIntent->customer);
     $metadata  = [
       'tickets'=>json_encode($ticketlist),
       'facture'=>$paymentIntent->charges->data[0]->receipt_url,

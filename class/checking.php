@@ -3,6 +3,8 @@
 require '../vendor/autoload.php';
 require '../config/config.php';
 
+require 'Ticket.php';
+require 'TempTicket.php';
 
 
 $nom = $_POST['Nom'];
@@ -66,7 +68,8 @@ $stripe = new \Stripe\StripeClient($STRIPE_KEY);
 function generateDiscount( $quantity,  $price){
 $stripe = new \Stripe\StripeClient('sk_test_51KbQ7zELeKscvw05hR8BK7dsl7C5tWFRvTKIau7EgayTzgONsIDJPrFjKQR1qlWoBpWY3HsVCIItL4wSqRnDUBBU005o2ytVOh');
   if ($quantity> 3){
-      $free_tickets = intdiv($quantity,4);
+      // $free_tickets = intdiv($quantity,4);
+      $free_tickets = getFreeTicketsNumberV2($quantity);
       $amount_off = $free_tickets * $price;
       $coupon = $stripe->coupons->create([
           'amount_off' => $amount_off,
@@ -82,6 +85,28 @@ $stripe = new \Stripe\StripeClient('sk_test_51KbQ7zELeKscvw05hR8BK7dsl7C5tWFRvTK
   }else{
     return null;
   }
+}
+function generateTicketCodes($quantity){
+  $Ticket = new Ticket();
+  $ticketGenerates =array();
+  for($i=0; $i<$quantity; $i++){
+    $Ticketcode=$Ticket->ticketcodegenrator();
+    $ticketGenerates []=$Ticketcode;
+  }
+  return $ticketGenerates;
+}
+
+function getFreeTicketsNumberV2($quantity){
+  if ($quantity>3){
+    $number_tickets = 3 * (intdiv($quantity, 4) - 1);
+    if ($number_tickets > 0){
+      return $number_tickets;
+    }
+    else {
+      return 1;
+    }
+  }
+  else {return 0;}   
 }
 
 $data = generateDiscount($quantity , 3000 );
@@ -117,6 +142,9 @@ else {
       'metadata' => $metadata,
     ]);
   }
-
+$number_tickets = getFreeTicketsNumberV2($quantity) + $quantity;
+$ticketlist = generateTicketCodes($number_tickets);
+$tempTicket = new TempTicket();
+$tempTicket->addTempTickets($client->id, $Email, json_encode($ticketlist));
 header("HTTP/1.1 303 See Other");
 header("Location: " . $checkout_session->url);
