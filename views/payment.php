@@ -383,9 +383,14 @@ include 'includes/navbar.php';
                   type="text"
                   name="priceT"
                   id="priceT"
-                  value="0"
                   disabled
                 />
+                <div class="popover__wrapper">
+                  <i class="fa-solid fa-circle-info" id="popover__title"></i>
+                  <div class="popover__content">
+                    <p class="message"></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

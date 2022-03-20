@@ -127,12 +127,28 @@ let minus = document.getElementById("minus");
 let plus = document.getElementById("plus");
 let nbrTicket = document.getElementById("quantity");
 let priceInput = document.getElementById("priceT");
+let message = document.querySelector(".message");
+let popover = document.getElementById("popover__title");
 let price = 29.9;
 
 priceInput.value = price;
 nbrTicket.addEventListener("keyup", () => {
-  // let ticketNumber = Math.floor(nbrTicket.value / 4);
+  let ticketNumber = Math.floor(nbrTicket.value / 4);
+  let bonus = 0;
+  if (nbrTicket.value < 4) {
+    bonus = 0;
+    message.innerText = "Achetez 4 tickets pour avoir un ticket bonus";
+  } else if (nbrTicket.value < 8) {
+    bonus = 1;
+    message.innerText = "Achetez 8 tickets pour avoir 3 tickets bonus";
+  } else {
+    bonus = 3 * (Math.floor(nbrTicket.value / 4) - 1);
+    message.innerText = `Achetez ${
+      (Math.floor(nbrTicket.value / 4) + 1) * 4
+    } tickets pour avoir ${3 * Math.floor(nbrTicket.value / 4)} tickets bonus`;
+  }
   priceInput.value = price * nbrTicket.value;
+  popover.style.visibility = "visible";
 });
 
 minus.addEventListener("click", () => {
@@ -140,9 +156,35 @@ minus.addEventListener("click", () => {
     nbrTicket.value--;
   }
   priceInput.value = price * nbrTicket.value;
+  let bonus = 0;
+  if (nbrTicket.value < 4) {
+    bonus = 0;
+    message.innerText = "Achetez 4 tickets pour avoir un ticket bonus";
+  } else if (nbrTicket.value < 8) {
+    bonus = 1;
+    message.innerText = "Achetez 8 tickets pour avoir 3 tickets bonus";
+  } else {
+    bonus = 3 * (Math.floor(nbrTicket.value / 4) - 1);
+    message.innerText = `Achetez ${
+      (Math.floor(nbrTicket.value / 4) + 1) * 4
+    } tickets pour avoir ${3 * Math.floor(nbrTicket.value / 4)} tickets bonus`;
+  }
 });
 
 plus.addEventListener("click", () => {
   nbrTicket.value++;
   priceInput.value = price * nbrTicket.value;
+  let bonus = 0;
+  if (nbrTicket.value < 4) {
+    bonus = 0;
+    message.innerText = "Achetez 4 tickets pour avoir un ticket bonus";
+  } else if (nbrTicket.value < 8) {
+    bonus = 1;
+    message.innerText = "Achetez 8 tickets pour avoir 3 tickets bonus";
+  } else {
+    bonus = 3 * (Math.floor(nbrTicket.value / 4) - 1);
+    message.innerText = `Achetez ${
+      (Math.floor(nbrTicket.value / 4) + 1) * 4
+    } tickets pour avoir ${3 * Math.floor(nbrTicket.value / 4)} tickets bonus`;
+  }
 });
