@@ -129,6 +129,7 @@ let nbrTicket = document.getElementById("quantity");
 let priceInput = document.getElementById("priceT");
 let message = document.querySelector(".message");
 let popover = document.getElementById("popover__title");
+let content = document.querySelector(".popover__content");
 let price = 29.9;
 
 priceInput.value = price;
@@ -149,6 +150,13 @@ nbrTicket.addEventListener("keyup", () => {
   }
   priceInput.value = price * nbrTicket.value;
   popover.style.visibility = "visible";
+  content.style.visibility = "visible";
+  content.style.opacity = "1";
+  content.style.transform = "translate(0, -20px)";
+  setTimeout(() => {
+    content.style.visibility = "hidden";
+    content.style.opacity = "0";
+  }, 2500);
 });
 
 minus.addEventListener("click", () => {
@@ -169,6 +177,14 @@ minus.addEventListener("click", () => {
       (Math.floor(nbrTicket.value / 4) + 1) * 4
     } tickets pour avoir ${3 * Math.floor(nbrTicket.value / 4)} tickets bonus`;
   }
+  popover.style.visibility = "visible";
+  content.style.visibility = "visible";
+  content.style.opacity = "1";
+  content.style.transform = "translate(0, -20px)";
+  setTimeout(() => {
+    content.style.visibility = "hidden";
+    content.style.opacity = "0";
+  }, 2500);
 });
 
 plus.addEventListener("click", () => {
@@ -186,5 +202,27 @@ plus.addEventListener("click", () => {
     message.innerText = `Achetez ${
       (Math.floor(nbrTicket.value / 4) + 1) * 4
     } tickets pour avoir ${3 * Math.floor(nbrTicket.value / 4)} tickets bonus`;
+  }
+  popover.style.visibility = "visible";
+  content.style.visibility = "visible";
+  content.style.opacity = "1";
+  content.style.transform = "translate(0, -20px)";
+  setTimeout(() => {
+    content.style.visibility = "hidden";
+    content.style.opacity = "0";
+  }, 2500);
+});
+
+let clicked = 0;
+popover.addEventListener("click", () => {
+  if (clicked === 0) {
+    content.style.visibility = "visible";
+    content.style.opacity = "1";
+    content.style.transform = "translate(0, -20px)";
+    clicked = 1;
+  } else {
+    content.style.visibility = "hidden";
+    content.style.opacity = "0";
+    clicked = 0;
   }
 });
