@@ -72,6 +72,7 @@ const phoneInputField = document.querySelector("#phone");
 const phoneInput = window.intlTelInput(phoneInputField, {
   utilsScript:
     "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  preferredCountries: ["fr"],
 });
 
 /*===========================*/
@@ -80,6 +81,7 @@ const phoneInput = window.intlTelInput(phoneInputField, {
 let submitBtn = document.getElementById("submitBtn");
 let notif = document.querySelector(".notification");
 let notifMsg = document.querySelector(".notifMsg");
+let spinner = document.querySelector(".spinnercard");
 let closeModel = document.getElementById("closeModel");
 let form = document.forms["myForm"];
 let mail_format = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -105,14 +107,15 @@ submitBtn.addEventListener("click", (e) => {
   } else if (form.zipCode.value === "") {
     e.preventDefault();
     error = "Vous devez entrer votre code postal";
-  } else if (form.ticket.value < 1) {
+  } else if (form.quantity.value < 1) {
     error = "Vous devez entrer un nombre de tickets supérieure à 0.";
     e.preventDefault();
   }
-
   if (error !== "") {
     notif.style.visibility = "visible";
     notifMsg.innerText = error;
+  } else {
+    spinner.style.visibility = "visible";
   }
 });
 
@@ -133,10 +136,14 @@ let popover = document.getElementById("popover__title");
 let content = document.querySelector(".popover__content");
 let price = 29.9;
 let clicked = 0;
-priceInput.value = price;
+priceInput.value = price + "€";
 nbrTicket.addEventListener("keyup", () => {
   let ggwp = Number(nbrTicket.value);
   showMessagePrice(ggwp, price);
+  setTimeout(() => {
+    content.style.visibility = "hidden";
+    content.style.opacity = "0";
+  }, 5000);
 });
 
 minus.addEventListener("click", () => {
@@ -157,6 +164,10 @@ plus.addEventListener("click", () => {
   clicked = 1;
   let ggwp = Number(nbrTicket.value);
   showMessagePrice(ggwp, price);
+  setTimeout(() => {
+    content.style.visibility = "hidden";
+    content.style.opacity = "0";
+  }, 5000);
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 popover.addEventListener("click", () => {
@@ -185,7 +196,7 @@ const showMessagePrice = (quantity, unitPrice) => {
       4 - quantity
     } </span> autres tickets pour avoir <span>1</span> ticket bonus et économisez <span>${unitPrice.toFixed(
       2
-    )} </span> euros.`;
+    )}&euro; </span>.`;
     oldP.innerHTML = "";
     totalTickets.innerHTML = `${quantity} tickets.`;
   } else if (quantity < 8) {
@@ -196,7 +207,7 @@ const showMessagePrice = (quantity, unitPrice) => {
       8 - quantity
     } </span> autres tickets pour avoir <span>3</span> tickets bonus et économisez <span>${(
       3 * unitPrice
-    ).toFixed(2)} </span> euros.`;
+    ).toFixed(2)} &euro;</span>.`;
     oldP.innerHTML = `${oldPrice} &euro;`;
     totalTickets.innerHTML = `${quantity} tickets <span>+ ${bonus} ticket offert.</span>`;
   } else {
@@ -210,19 +221,15 @@ const showMessagePrice = (quantity, unitPrice) => {
     } </span> tickets bonus et économisez <span>${(
       (bonus + 3) *
       unitPrice
-    ).toFixed(2)} </span> euros.`;
+    ).toFixed(2)} &euro; </span>.`;
     oldP.innerHTML = `${oldPrice} &euro;`;
     totalTickets.innerHTML = `${quantity} tickets <span>+ ${bonus} tickets offerts.</span>`;
   }
-  priceInput.value = finalPrice;
+  priceInput.value = finalPrice + "€";
   message.innerHTML = text;
   popover.style.visibility = "visible";
   content.style.visibility = "visible";
   content.style.opacity = "1";
   content.style.transform = "translate(0, -20px)";
-  setTimeout(() => {
-    content.style.visibility = "hidden";
-    content.style.opacity = "0";
-  }, 5000);
   showed.style.display = "block";
 };

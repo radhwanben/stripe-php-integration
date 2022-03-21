@@ -11,6 +11,11 @@ include 'includes/navbar.php';
         <p class="notifMsg"></p>
       </div>
     </div>
+        <div class="spinnercard">
+      <div class="spincircle">
+        <div class="spin"></div>
+      </div>
+    </div>
     <header>
       <div class="header">
         <h1>Immobilier <span>à Dubai</span></h1>
@@ -364,7 +369,7 @@ include 'includes/navbar.php';
               <p>Nombre de tickets </p>
               <div class="quantity">
                 <i class="fa-solid fa-caret-left" id="minus"></i>
-                <input type="number" name="quantity" id="quantity" min="1" required />
+                <input type="number" name="quantity" id="quantity" min="1" value="1" required />
                 <i class="fa-solid fa-caret-right" id="plus"></i>
               </div>
             </div>

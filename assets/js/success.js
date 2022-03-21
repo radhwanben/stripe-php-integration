@@ -42,7 +42,7 @@ let successEmail = document.getElementById("succEmail");
 let successPhone = document.getElementById("succPhone");
 let successFacture = document.getElementById("succFacture");
 let nbrTickets = document.getElementById("succTickets");
-let ticketBtn = document.getElementById("tickets");
+// let ticketBtn = document.getElementById("tickets");
 let notif = document.querySelector(".successnotif");
 let notifMsg = document.querySelector(".notifMsg");
 let closeModel = document.getElementById("closeModel");
@@ -77,9 +77,9 @@ let closeModel = document.getElementById("closeModel");
 // nbrTickets.innerText = responseData.number_of_tickets;
 // notifMsg.innerHTML = showTickets;
 
-ticketBtn.addEventListener("click", () => {
-  notif.style.visibility = "visible";
-});
+// ticketBtn.addEventListener("click", () => {
+//   notif.style.visibility = "visible";
+// });
 
 closeModel.addEventListener("click", () => {
   notif.style.visibility = "hidden";

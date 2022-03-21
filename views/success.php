@@ -88,7 +88,7 @@ include 'includes/navbar.php';
             <div id="succTickets">
             <?php echo $data->number_of_tickets; ?>
             </div>
-            <div id="tickets">Your ticket list</div>
+            <!-- <div id="tickets">Your ticket list</div> -->
             
             <!-- <?php
             
@@ -99,6 +99,9 @@ include 'includes/navbar.php';
             ?> -->
             
             </select>
+                      <div class="succLine">
+            <p id="emailPara">Consultez votre e-mail pour voir vos tickets.</p>
+          </div>
           </div>
         </div>
         <div class="box3">

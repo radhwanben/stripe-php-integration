@@ -728,3 +728,10 @@ form > button:hover {
     font-size: 16px;
   }
 }
+#emailPara {
+  font-size: 20px;
+  font-weight: 400;
+  color: #666666;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif !important;
+}
