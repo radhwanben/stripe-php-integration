@@ -110,17 +110,28 @@ include 'includes/navbar.php';
           <div class="slink">
             <div class="fb-share-button" 
             
-                data-href="https://i.ibb.co/WVG9TTF/ticketgif.gif" 
+                data-href="https://github.com/radhwanben/stripe-php-integration/blob/main/assets/images/finalgif.gif" 
                 data-layout="button">
             </div>
           </div>
           <div class="slink">
             <i class="fa-brands fa-whatsapp-square"></i>
-            <p>whatsapp</p>
+              <a href=
+            "whatsapp://send?text=https://github.com/radhwanben/stripe-php-integration/blob/main/assets/images/finalgif.gif"
+                    data-action="share/whatsapp/share"
+                    target="_blank">
+                 <p>whatsapp</p>
+              </a>
+            
           </div>
           <div class="slink">
             <i class="fa-brands fa-twitter"></i>
+           <a class="twitter-share-button"
+              href="https://twitter.com/intent/tweet?url=https://github.com/radhwanben/stripe-php-integration/blob/main/assets/images/finalgif.gif"
+              data-size="large">
             <p>twitter</p>
+           </a>
+              
           </div>
         </div>
         <div class="box5">
