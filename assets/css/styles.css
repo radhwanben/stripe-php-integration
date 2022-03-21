@@ -883,6 +883,7 @@ footer::before {
   flex-direction: column;
 }
 .priceHeader {
+  margin-top: 5px;
   font-size: 20px;
   font-weight: 700;
   color: #000;
@@ -899,7 +900,7 @@ footer::before {
 .totalP {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 5px;
   font-family: "Poppins", sans-serif !important;
 }
 .totalP > input {
@@ -978,6 +979,10 @@ footer::before {
   opacity: 1;
   visibility: visible;
   transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+.message > span {
+  color: #ff5e5e;
+  font-weight: 700;
 }
 @keyframes heartbeat {
   0% {

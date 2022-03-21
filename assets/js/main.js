@@ -132,6 +132,7 @@ let message = document.querySelector(".message");
 let popover = document.getElementById("popover__title");
 let content = document.querySelector(".popover__content");
 let price = 29.9;
+let clicked = 0;
 priceInput.value = price;
 nbrTicket.addEventListener("keyup", () => {
   let ggwp = Number(nbrTicket.value);
@@ -146,15 +147,18 @@ minus.addEventListener("click", () => {
   showMessagePrice(ggwp, price);
   content.style.visibility = "hidden";
   content.style.opacity = "0";
+  clicked = 0;
 });
 
 plus.addEventListener("click", () => {
   nbrTicket.value++;
+  content.style.visibility = "visible";
+  content.style.opacity = "1";
+  clicked = 1;
   let ggwp = Number(nbrTicket.value);
   showMessagePrice(ggwp, price);
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-let clicked = 0;
 popover.addEventListener("click", () => {
   if (clicked === 0) {
     content.style.visibility = "visible";
@@ -177,39 +181,41 @@ const showMessagePrice = (quantity, unitPrice) => {
   if (quantity < 4) {
     finalPrice = (unitPrice * quantity).toFixed(2);
     bonus = 0;
-    text = `achetez ${
+    text = `achetez <span>${
       4 - quantity
-    } autres tickets pour avoir 1 ticket bonus et économisez ${unitPrice.toFixed(
+    } </span> autres tickets pour avoir <span>1</span> ticket bonus et économisez <span>${unitPrice.toFixed(
       2
-    )} euros.`;
+    )} </span> euros.`;
     oldP.innerHTML = "";
     totalTickets.innerHTML = `${quantity} tickets.`;
   } else if (quantity < 8) {
     bonus = 1;
     oldPrice = (unitPrice * (quantity + bonus)).toFixed(2);
     finalPrice = (unitPrice * quantity).toFixed(2);
-    text = `achetez ${
+    text = `achetez <span>${
       8 - quantity
-    } autres tickets pour avoir 3 tickets bonus et économisez ${(
+    } </span> autres tickets pour avoir <span>3</span> tickets bonus et économisez <span>${(
       3 * unitPrice
-    ).toFixed(2)} euros.`;
+    ).toFixed(2)} </span> euros.`;
     oldP.innerHTML = `${oldPrice} &euro;`;
     totalTickets.innerHTML = `${quantity} tickets <span>+ ${bonus} ticket offert.</span>`;
   } else {
     bonus = 3 * (Math.floor(quantity / 4) - 1);
     oldPrice = (unitPrice * (quantity + bonus)).toFixed(2);
     finalPrice = (unitPrice * quantity).toFixed(2);
-    text = `achetez ${
+    text = `achetez <span>${
       (Math.floor(quantity / 4) + 1) * 4 - quantity
-    } autres tickets pour avoir ${bonus + 3} tickets bonus et économisez ${(
+    }</span> autres tickets pour avoir <span>${
+      bonus + 3
+    } </span> tickets bonus et économisez <span>${(
       (bonus + 3) *
       unitPrice
-    ).toFixed(2)} euros.`;
+    ).toFixed(2)} </span> euros.`;
     oldP.innerHTML = `${oldPrice} &euro;`;
     totalTickets.innerHTML = `${quantity} tickets <span>+ ${bonus} tickets offerts.</span>`;
   }
   priceInput.value = finalPrice;
-  message.innerText = text;
+  message.innerHTML = text;
   popover.style.visibility = "visible";
   content.style.visibility = "visible";
   content.style.opacity = "1";

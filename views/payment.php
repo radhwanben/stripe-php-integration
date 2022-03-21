@@ -378,7 +378,6 @@ include 'includes/navbar.php';
               </ul>
               <div class="pricebox">
                 <div class="priceHeader">Prix</div>
-                <div class="priceP">Prix total à payer</div>
                 <div class="totalP">
                   <input type="text" value="29.90" disabled id="priceT" />
                   <p class="oldP"></p>
