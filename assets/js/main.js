@@ -144,6 +144,8 @@ minus.addEventListener("click", () => {
   }
   let ggwp = Number(nbrTicket.value);
   showMessagePrice(ggwp, price);
+  content.style.visibility = "hidden";
+  content.style.opacity = "0";
 });
 
 plus.addEventListener("click", () => {
@@ -215,6 +217,6 @@ const showMessagePrice = (quantity, unitPrice) => {
   setTimeout(() => {
     content.style.visibility = "hidden";
     content.style.opacity = "0";
-  }, 2500);
+  }, 5000);
   showed.style.display = "block";
 };
