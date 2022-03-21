@@ -1,3 +1,4 @@
+//===NAVBAR=====================================================================================================/
 let menuBtn = document.querySelector(".open");
 let items = document.querySelector(".navbar__items");
 let closeBtn = document.querySelector(".close");
@@ -37,7 +38,7 @@ dropBtn.addEventListener("click", () => {
 });
 
 /*===========================================================*/
-
+//===Video=====================================================================================================/
 let btn = document.getElementById("pausePlay");
 let video = document.getElementById("myVideo");
 
@@ -51,13 +52,8 @@ video.addEventListener("click", () => {
     btn.classList.add("fa-circle-pause");
   }
 });
-/*===============*/
-const phoneInputField = document.querySelector("#phone");
-const phoneInput = window.intlTelInput(phoneInputField, {
-  utilsScript:
-    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-});
 
+/*===============*/
 let btn2 = document.getElementById("pausePlay2");
 let video2 = document.getElementById("mobileVideo");
 
@@ -71,8 +67,15 @@ video2.addEventListener("click", () => {
     btn2.classList.add("fa-circle-pause");
   }
 });
-/*===========================*/
+//===Phone Input=====================================================================================================/
+const phoneInputField = document.querySelector("#phone");
+const phoneInput = window.intlTelInput(phoneInputField, {
+  utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
 
+/*===========================*/
+//===Form Validation=====================================================================================================/
 /*===================================*/
 let submitBtn = document.getElementById("submitBtn");
 let notif = document.querySelector(".notification");
@@ -99,9 +102,6 @@ submitBtn.addEventListener("click", (e) => {
   } else if (form.city.value === "") {
     e.preventDefault();
     error = "Vous devez entrer votre cité.";
-  } else if (form.state.value === "") {
-    e.preventDefault();
-    error = "Vous devez entrer votre Etat/Provenance.";
   } else if (form.zipCode.value === "") {
     e.preventDefault();
     error = "Vous devez entrer votre code postal";
@@ -121,98 +121,37 @@ closeModel.addEventListener("click", () => {
   notif.style.visibility = "hidden";
 });
 /*=====================================================*/
-let bonusPara = document.querySelector(".ticketsBonus");
-let secondMsg = document.querySelector(".secondMsg");
 let minus = document.getElementById("minus");
 let plus = document.getElementById("plus");
 let nbrTicket = document.getElementById("quantity");
 let priceInput = document.getElementById("priceT");
+let oldP = document.querySelector(".oldP");
+let showed = document.getElementById("showPresent");
+let totalTickets = document.getElementById("listTick");
 let message = document.querySelector(".message");
 let popover = document.getElementById("popover__title");
 let content = document.querySelector(".popover__content");
 let price = 29.9;
-
 priceInput.value = price;
 nbrTicket.addEventListener("keyup", () => {
-  let ticketNumber = Math.floor(nbrTicket.value / 4);
-  let bonus = 0;
-  if (nbrTicket.value < 4) {
-    bonus = 0;
-    message.innerText = "Achetez 4 tickets pour avoir un ticket bonus";
-  } else if (nbrTicket.value < 8) {
-    bonus = 1;
-    message.innerText = "Achetez 8 tickets pour avoir 3 tickets bonus";
-  } else {
-    bonus = 3 * (Math.floor(nbrTicket.value / 4) - 1);
-    message.innerText = `Achetez ${
-      (Math.floor(nbrTicket.value / 4) + 1) * 4
-    } tickets pour avoir ${3 * Math.floor(nbrTicket.value / 4)} tickets bonus`;
-  }
-  priceInput.value = price * nbrTicket.value;
-  popover.style.visibility = "visible";
-  content.style.visibility = "visible";
-  content.style.opacity = "1";
-  content.style.transform = "translate(0, -20px)";
-  setTimeout(() => {
-    content.style.visibility = "hidden";
-    content.style.opacity = "0";
-  }, 2500);
+  let ggwp = Number(nbrTicket.value);
+  showMessagePrice(ggwp, price);
 });
 
 minus.addEventListener("click", () => {
   if (nbrTicket.value > 1) {
     nbrTicket.value--;
   }
-  priceInput.value = price * nbrTicket.value;
-  let bonus = 0;
-  if (nbrTicket.value < 4) {
-    bonus = 0;
-    message.innerText = "Achetez 4 tickets pour avoir un ticket bonus";
-  } else if (nbrTicket.value < 8) {
-    bonus = 1;
-    message.innerText = "Achetez 8 tickets pour avoir 3 tickets bonus";
-  } else {
-    bonus = 3 * (Math.floor(nbrTicket.value / 4) - 1);
-    message.innerText = `Achetez ${
-      (Math.floor(nbrTicket.value / 4) + 1) * 4
-    } tickets pour avoir ${3 * Math.floor(nbrTicket.value / 4)} tickets bonus`;
-  }
-  popover.style.visibility = "visible";
-  content.style.visibility = "visible";
-  content.style.opacity = "1";
-  content.style.transform = "translate(0, -20px)";
-  setTimeout(() => {
-    content.style.visibility = "hidden";
-    content.style.opacity = "0";
-  }, 2500);
+  let ggwp = Number(nbrTicket.value);
+  showMessagePrice(ggwp, price);
 });
 
 plus.addEventListener("click", () => {
   nbrTicket.value++;
-  priceInput.value = price * nbrTicket.value;
-  let bonus = 0;
-  if (nbrTicket.value < 4) {
-    bonus = 0;
-    message.innerText = "Achetez 4 tickets pour avoir un ticket bonus";
-  } else if (nbrTicket.value < 8) {
-    bonus = 1;
-    message.innerText = "Achetez 8 tickets pour avoir 3 tickets bonus";
-  } else {
-    bonus = 3 * (Math.floor(nbrTicket.value / 4) - 1);
-    message.innerText = `Achetez ${
-      (Math.floor(nbrTicket.value / 4) + 1) * 4
-    } tickets pour avoir ${3 * Math.floor(nbrTicket.value / 4)} tickets bonus`;
-  }
-  popover.style.visibility = "visible";
-  content.style.visibility = "visible";
-  content.style.opacity = "1";
-  content.style.transform = "translate(0, -20px)";
-  setTimeout(() => {
-    content.style.visibility = "hidden";
-    content.style.opacity = "0";
-  }, 2500);
+  let ggwp = Number(nbrTicket.value);
+  showMessagePrice(ggwp, price);
 });
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
 let clicked = 0;
 popover.addEventListener("click", () => {
   if (clicked === 0) {
@@ -226,3 +165,56 @@ popover.addEventListener("click", () => {
     clicked = 0;
   }
 });
+//All about Price logic (bonus,price,total,text etc ....) :
+const showMessagePrice = (quantity, unitPrice) => {
+  let bonus = 0;
+  let finalPrice = 0;
+  let oldPrice = 0;
+  let text = "";
+
+  if (quantity < 4) {
+    finalPrice = (unitPrice * quantity).toFixed(2);
+    bonus = 0;
+    text = `achetez ${
+      4 - quantity
+    } autres tickets pour avoir 1 ticket bonus et économisez ${unitPrice.toFixed(
+      2
+    )} euros.`;
+    oldP.innerHTML = "";
+    totalTickets.innerHTML = `${quantity} tickets.`;
+  } else if (quantity < 8) {
+    bonus = 1;
+    oldPrice = (unitPrice * (quantity + bonus)).toFixed(2);
+    finalPrice = (unitPrice * quantity).toFixed(2);
+    text = `achetez ${
+      8 - quantity
+    } autres tickets pour avoir 3 tickets bonus et économisez ${(
+      3 * unitPrice
+    ).toFixed(2)} euros.`;
+    oldP.innerHTML = `${oldPrice} &euro;`;
+    totalTickets.innerHTML = `${quantity} tickets <span>+ ${bonus} ticket offert.</span>`;
+  } else {
+    bonus = 3 * (Math.floor(quantity / 4) - 1);
+    oldPrice = (unitPrice * (quantity + bonus)).toFixed(2);
+    finalPrice = (unitPrice * quantity).toFixed(2);
+    text = `achetez ${
+      (Math.floor(quantity / 4) + 1) * 4 - quantity
+    } autres tickets pour avoir ${bonus + 3} tickets bonus et économisez ${(
+      (bonus + 3) *
+      unitPrice
+    ).toFixed(2)} euros.`;
+    oldP.innerHTML = `${oldPrice} &euro;`;
+    totalTickets.innerHTML = `${quantity} tickets <span>+ ${bonus} tickets offerts.</span>`;
+  }
+  priceInput.value = finalPrice;
+  message.innerText = text;
+  popover.style.visibility = "visible";
+  content.style.visibility = "visible";
+  content.style.opacity = "1";
+  content.style.transform = "translate(0, -20px)";
+  setTimeout(() => {
+    content.style.visibility = "hidden";
+    content.style.opacity = "0";
+  }, 2500);
+  showed.style.display = "block";
+};

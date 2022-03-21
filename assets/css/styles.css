@@ -271,7 +271,7 @@ input::-webkit-inner-spin-button {
 header {
   min-height: 50vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4) 100%, rgba(0, 0, 0, 0.4) 100%),
-    url("../images/header.jpg");
+    url("./assets/header.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -432,7 +432,7 @@ form {
   max-width: 650px;
 }
 .line {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .line > h1 {
   font-size: 20px;
@@ -456,7 +456,6 @@ form {
   border-radius: 9px;
 }
 .line2 > .line2__mid {
-  /* margin: 0 35px; */
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -503,6 +502,7 @@ form {
   font-size: 20px;
   cursor: pointer;
   color: #72808a;
+  padding: 5px;
 }
 .line3 {
   /* margin-top: 30px; */
@@ -611,15 +611,14 @@ form {
   }
   .line2 > .line2__mid {
     width: 90%;
-    margin: 30px auto;
-    margin-bottom: -50px;
+    margin: 0px auto;
     align-items: center;
   }
   .line4 {
     margin-top: -40px;
   }
   .line2 > #ticketImg {
-    transform: scale(1.2);
+    display: none;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -850,53 +849,134 @@ footer::before {
     font-size: 16px;
   }
 }
+.ticketcard {
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  position: relative;
+  font-family: "Poppins", sans-serif !important;
+  width: 90%;
+}
+.cardLeft {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 60%;
+  text-align: start;
+}
+.cardLeft > ul {
+  margin-top: 20px;
+  margin-left: 16px;
+  /* display: none; */
+}
+.cardLeft > ul li {
+  font-size: 16px;
+  font-weight: 600;
+  color: #9d9fa0;
+  font-family: "Poppins", sans-serif !important;
+}
+.cardLeft > ul li > span {
+  color: #ff5e5e;
+}
+.priceBox {
+  display: flex;
+  flex-direction: column;
+}
+.priceHeader {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  line-height: 20px;
+  font-family: "Poppins", sans-serif !important;
+}
+.priceP {
+  font-size: 15px;
+  font-weight: 400;
+  color: #9d9fa0;
+  line-height: 20px;
+  font-family: "Poppins", sans-serif !important;
+}
+.totalP {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif !important;
+}
+.totalP > input {
+  width: 110px;
+  padding: 10px 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 20px;
+  color: #d1a046;
+  font-weight: 700;
+  margin-right: 10px;
+  text-align: center;
+  font-family: "Poppins", sans-serif !important;
+}
+.oldP {
+  font-size: 20px;
+  margin-right: 10px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #72808a;
+  text-decoration: line-through;
+  font-family: "Poppins", sans-serif !important;
+}
+.cardRight {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardRight > button {
+  padding: 10px 40px;
+  border: none;
+  outline: none;
+  background-color: #d1a046;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif !important;
+}
+
 #popover__title {
-  font-size: 24px;
+  font-size: 40px;
   color: #d1a046;
   text-align: center;
   animation: heartbeat 10s infinite;
   cursor: pointer;
-  margin-top: 100px;
   visibility: hidden;
 }
 
 .popover__wrapper {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 .popover__content {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  left: 20px;
-  bottom: 0px;
+  left: 30px;
+  bottom: 15px;
   transform: translate(-10px, 100px);
   background-color: #fff;
   padding: 1.5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   width: 300px;
   border-radius: 24px;
-}
-.popover__content:before {
-  position: absolute;
-  z-index: -1;
-  content: "";
-  /* right: calc(50% - 10px); */
-  /* top: -8px; */
-  bottom: -10px;
-  left: -10px;
-  border-style: solid;
-  border-width: 10px 10px 10px 10px;
-  border-color: transparent transparent #fff transparent;
-  transition-duration: 0.3s;
-  transition-property: transform;
-  transform: rotate(225deg);
+  border-left: 5px solid #d1a046;
+  border-bottom: 5px solid #d1a046;
+  border-bottom-left-radius: 0;
 }
 .popover__wrapper:hover .popover__content {
   z-index: 10;
   opacity: 1;
   visibility: visible;
-  transform: translate(0, -20px);
   transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
 }
 @keyframes heartbeat {
@@ -919,15 +999,68 @@ footer::before {
     transform: scale(0.75);
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 1245px) {
   .popover__content {
-    width: auto;
-    min-width: 200px;
+    left: -50px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-left: none;
+    border-right: 5px solid #d1a046;
+    left: -240px;
+    width: 250px;
+    padding: 1rem;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 985px) {
   .popover__content {
-    width: auto;
-    min-width: 140px;
+    left: 30px;
+    bottom: 15px;
+    transform: translate(-10px, 100px);
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: 300px;
+    border-radius: 24px;
+    border-left: 5px solid #d1a046;
+    border-bottom: 5px solid #d1a046;
+    border-bottom-left-radius: 0;
+  }
+}
+@media screen and (max-width: 620px) {
+  .popover__content {
+    left: -50px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .ticketcard {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .cardLeft {
+    padding: 20px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .cardRight {
+    padding: 20px;
+  }
+  .popover__content {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* border-left: none; */
+    border-right: 5px solid #d1a046;
+    left: -120px;
+    width: 250px;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .popover__content {
+    left: -200px;
+    font-size: 14px;
+    width: 220px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-left: none;
   }
 }

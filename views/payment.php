@@ -6,7 +6,7 @@ include 'includes/navbar.php';
 ?>
         <div class="notification">
       <div class="notifCard">
-        <img src="./assets/logo.png" alt="logo" />
+        <img src="../assets/images/logo.png" alt="logo" />
         <i class="fa-solid fa-xmark" id="closeModel"></i>
         <p class="notifMsg"></p>
       </div>
@@ -76,7 +76,6 @@ include 'includes/navbar.php';
               name="state"
               id="state"
               placeholder="Etat / Provenance"
-              required
             />
           </div>
           <div class="formLine">
@@ -369,35 +368,32 @@ include 'includes/navbar.php';
                 <i class="fa-solid fa-caret-right" id="plus"></i>
               </div>
             </div>
-            <img src="../assets/images/ticket.png" alt="ticket" id="ticketImg"/>
+            <img src="../assets/images/lightticket.png" alt="ticket" id="ticketImg"/>
           </div>
-           <div class="line4">
-            <div class="priceDiv">
-              <p class="wordPrice">Prix</p>
-              <!-- <p class="paraPrice">Select a currency</p> -->
+                     <div class="ticketcard">
+            <div class="cardLeft">
+              <ul id="showPresent">
+                <li>E-Book.</li>
+                <li id="listTick">1 ticket.</li>
+              </ul>
               <div class="pricebox">
-                <select name="curr" id="curr" disabled>
-                  <option value="euro">&euro;</option>
-                </select>
-                <input
-                  type="text"
-                  name="priceT"
-                  id="priceT"
-                  disabled
-                />
-                <div class="popover__wrapper">
-                  <i class="fa-solid fa-circle-info" id="popover__title"></i>
-                  <div class="popover__content">
-                    <p class="message"></p>
+                <div class="priceHeader">Prix</div>
+                <div class="priceP">Prix total à payer</div>
+                <div class="totalP">
+                  <input type="text" value="29.90" disabled id="priceT" />
+                  <p class="oldP"></p>
+                  <div class="popover__wrapper icon">
+                    <i class="fa-solid fa-circle-info" id="popover__title"></i>
+                    <div class="popover__content">
+                      <p class="message"></p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="line3">
-            <p class="ticketsBonus"></p>
-            <p class="secondMsg"></p>
-            <button type="submit" id="submitBtn">Buy</button>
+            <div class="cardRight">
+              <button id="submitBtn" type="submit">Buy</button>
+            </div>
           </div>
         </div>
       </form>
