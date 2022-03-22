@@ -121,7 +121,7 @@ if (!empty($data)) {
       'customer' => $client->id,
       'mode' => 'payment',
       'success_url' => $YOUR_DOMAIN . '/success?session_id={CHECKOUT_SESSION_ID}',
-      'cancel_url' => $YOUR_DOMAIN . '/cancel?session_id={CHECKOUT_SESSION_ID}',
+      'cancel_url' => 'https://the-dubai-life.com',
       'metadata' => $metadata,
       'discounts'=> [[
         'coupon' => $data['coupon']
@@ -138,7 +138,7 @@ else {
       'customer' => $client->id,
       'mode' => 'payment',
       'success_url' => $YOUR_DOMAIN . '/success?session_id={CHECKOUT_SESSION_ID}',
-      'cancel_url' => $YOUR_DOMAIN . '/cancel?session_id={CHECKOUT_SESSION_ID}',
+      'cancel_url' => "https://the-dubai-life.com",
       'metadata' => $metadata,
     ]);
   }
