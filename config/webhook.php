@@ -167,14 +167,14 @@ switch ($event->type) {
     $body =str_replace('%email%', $data->email, $body);
     $body =str_replace('%phone%', $data->phone, $body);
     $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
-    $body .= '  <div class="box5">
-                    <p>Download your ebook from here:</p>
-                    <button>Download</button>
-                  </div>
-                  </div>
-                  </section>
-                  </body>
-                  </html>';
+    $body =str_replace('%download%' ,'  <div class="box5">
+              <p>Download your ebook from here:</p>
+                <button>Download</button>
+            </div>
+            </div>
+            </section>
+            </body>
+            </html>' , $body );
     $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
     $mailer->sendMail($recieverEmail,$subject,$body);
 
