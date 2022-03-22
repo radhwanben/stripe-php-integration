@@ -17,6 +17,7 @@ require 'class/TempTicket.php';
 require 'class/Campaign.php';
 require 'class/Client.php';
 require 'class/Mail.php';
+require 'config.php';
 
 // test ets 
 
