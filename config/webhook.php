@@ -162,8 +162,11 @@ switch ($event->type) {
     // sending email for confirmation containing tickets codes
     $recieverEmail = $data->email;
     $subject = "The Dubai Life";
-    $email_template ="views/mail.phtml";
+    $email_template ="../views/mail.php";
     $body = file_get_contents($email_template);
+    $body =str_replace('%email%', $data->email, $body);
+    $body =str_replace('%phone%', $data->phone, $body);
+    $body =str_replace('%link%', $data->facture, $body);
     $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
     $mailer->sendMail($recieverEmail,$subject,$body);
 
