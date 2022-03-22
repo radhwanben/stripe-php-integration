@@ -156,11 +156,14 @@ minus.addEventListener("click", () => {
   if (nbrTicket.value > 1) {
     nbrTicket.value--;
   }
+  clearTimeout(timerID);
   let ggwp = Number(nbrTicket.value);
   showMessagePrice(ggwp, price);
-  content.style.visibility = "hidden";
-  content.style.opacity = "0";
-  clicked = 0;
+  clicked = 1;
+  timerID = setTimeout(() => {
+    content.style.visibility = "hidden";
+    content.style.opacity = "0";
+  }, 5000);
 });
 
 plus.addEventListener("click", () => {
