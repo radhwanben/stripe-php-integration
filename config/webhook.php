@@ -168,7 +168,7 @@ switch ($event->type) {
     $body =str_replace('%phone%', $data->phone, $body);
     $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
     foreach ($ticketlist as $ticket){
-      $body =str_replace('%tickets%' , '
+      $html .='
       
       <div class="notifLine">
             <img src="http://dubailife3.herokuapp.com/assets/images/ticket.png" alt="ticket" />
@@ -177,8 +177,10 @@ switch ($event->type) {
           </div>
       
       
-      ',$body);
-    }
+      ';
+      
+    };
+    $body =str_replace('%tickets%' , $html, $body);
     $body =str_replace('%download%' ,'  <div class="box5">
               <p>Download your ebook from here:</p>
                 <button>Download</button>
