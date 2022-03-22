@@ -154,7 +154,7 @@ switch ($event->type) {
       'tickets'=>json_encode($ticketlist),
       'facture'=>$paymentIntent->charges->data[0]->receipt_url,
       'status'=>$paymentIntent->status,
-      'number_of_tickets'=>$number_tickets
+      // 'number_of_tickets'=>$number_tickets
       ];
     updateCustomerData($paymentIntent->customer,$metadata);
     saveInfos($ticketlist, $data);
