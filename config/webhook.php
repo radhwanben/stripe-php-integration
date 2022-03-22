@@ -164,9 +164,17 @@ switch ($event->type) {
     $subject = "The Dubai Life";
     $email_template ="views/mail.phtml";
     $body = file_get_contents($email_template);
-    $body .=str_replace('%email%', $data->email, $body);
-    $body .=str_replace('%phone%', $data->phone, $body);
-    $body .=str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
+    $body =str_replace('%email%', $data->email, $body);
+    $body =str_replace('%phone%', $data->phone, $body);
+    $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
+    $body .= '  <div class="box5">
+                    <p>Download your ebook from here:</p>
+                    <button>Download</button>
+                  </div>
+                  </div>
+                  </section>
+                  </body>
+                  </html>';
     $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
     $mailer->sendMail($recieverEmail,$subject,$body);
 
