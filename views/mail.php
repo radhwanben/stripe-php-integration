@@ -30,6 +30,28 @@ include 'includes/header.php';
             <div id="succTickets">5</div>
           </div>
         </div>
+        <div class="notifMsg">
+          <div class="notifLine">
+            <img src="../assets/images/ticket.png" alt="ticket" />
+            <p>Ticket N° <span>1</span> :</p>
+            <p class="ticketnumber">123456789</p>
+          </div>
+          <div class="notifLine">
+            <img src="../assets/images/ticket.png" alt="ticket" />
+            <p>Ticket N° <span>2</span> :</p>
+            <p class="ticketnumber">123456789</p>
+          </div>
+          <div class="notifLine">
+            <img src="../assets/images/ticket.png" alt="ticket" />
+            <p>Ticket N° <span>3</span> :</p>
+            <p class="ticketnumber">123456789</p>
+          </div>
+          <div class="notifLine">
+            <img src="../assets/images/ticket.png" alt="ticket" />
+            <p>Ticket N° <span>4</span> :</p>
+            <p class="ticketnumber">123456789</p>
+          </div>
+        </div>
         <div class="box3">
           <img src="../assets/images/final-2.gif" alt="gif" />
           <div class="shadowP"></div>

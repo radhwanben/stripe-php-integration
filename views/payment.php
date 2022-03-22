@@ -163,7 +163,7 @@ include 'includes/navbar.php';
               <option value="Faroe Islands">Faroe Islands</option>
               <option value="Fiji">Fiji</option>
               <option value="Finland">Finland</option>
-              <option value="France">France</option>
+              <option value="France" selected>France</option>
               <option value="French Guiana">French Guiana</option>
               <option value="French Polynesia">French Polynesia</option>
               <option value="French Southern Ter">French Southern Ter</option>
