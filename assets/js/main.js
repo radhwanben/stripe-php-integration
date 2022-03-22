@@ -136,11 +136,17 @@ let popover = document.getElementById("popover__title");
 let content = document.querySelector(".popover__content");
 let price = 29.9;
 let clicked = 0;
+var timerID = setTimeout(() => {
+  content.style.visibility = "hidden";
+  content.style.opacity = "0";
+}, 5000);
+
 priceInput.value = price + "€";
 nbrTicket.addEventListener("keyup", () => {
+  clearTimeout(timerID);
   let ggwp = Number(nbrTicket.value);
   showMessagePrice(ggwp, price);
-  setTimeout(() => {
+  timerID = setTimeout(() => {
     content.style.visibility = "hidden";
     content.style.opacity = "0";
   }, 5000);
@@ -158,13 +164,12 @@ minus.addEventListener("click", () => {
 });
 
 plus.addEventListener("click", () => {
+  clearTimeout(timerID);
   nbrTicket.value++;
-  content.style.visibility = "visible";
-  content.style.opacity = "1";
   clicked = 1;
   let ggwp = Number(nbrTicket.value);
   showMessagePrice(ggwp, price);
-  setTimeout(() => {
+  timerID = setTimeout(() => {
     content.style.visibility = "hidden";
     content.style.opacity = "0";
   }, 5000);
@@ -233,3 +238,4 @@ const showMessagePrice = (quantity, unitPrice) => {
   content.style.transform = "translate(0, -20px)";
   showed.style.display = "block";
 };
+///////////////////////////////////////////////////////////////////////////////////////////////////////
