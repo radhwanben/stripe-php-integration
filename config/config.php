@@ -8,8 +8,12 @@ $DB_DATABASE='heroku_5f7c029aa9e9f41';
 $DB_USERNAME="bcc58c8717eede";
 $DB_PASSWORD="3a5fb8ab";
 
+$SMTP_HOST ="smtp.zoho.eu";
+$SMTP_USER ="admin@the-dubai-life.com";
+$SMTP_PASSWORD ="e9mnMpSaDJ7X";
+$SMTP_PORT  ="587";
 
-$SMTP_HOST ="smtp.mailtrap.io";
-$SMTP_USER ="a58ee2ffb3e1a4";
-$SMTP_PASSWORD ="1ae5005ef7a849";
-$SMTP_PORT  ="2525";
+// $SMTP_HOST ="smtp.mailtrap.io";
+// $SMTP_USER ="a58ee2ffb3e1a4";
+// $SMTP_PASSWORD ="1ae5005ef7a849";
+// $SMTP_PORT  ="2525";

@@ -16,6 +16,7 @@ require 'class/Ticket.php';
 require 'class/TempTicket.php';
 require 'class/Campaign.php';
 require 'class/Client.php';
+require 'class/Mail.php';
 
 // test ets 
 
@@ -157,7 +158,12 @@ switch ($event->type) {
     updateCustomerData($paymentIntent->customer,$metadata);
     saveInfos($ticketlist, $data);
     $Campaigns =insertCampaign($data, $paymentIntent->status, $paymentIntent->amount_received, $paymentIntent->charges->data[0]->receipt_url);
-   
+    // sending email for confirmation containing tickets codes
+    $recieverEmail = $data->email;
+    $subject = "The Dubai Life";
+    $body = "<h1>activating soon</h1>";
+    $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
+    $mailer->sendMail($recieverEmail,$subject,$body);
 
 
    

@@ -18,12 +18,12 @@
     //var_dump($tickets);
 
 
-    // $recieverEmail = $data->email;
-    // $subject = "FROM STRIPE";
-    // $body = "<h1>im H1</h1>";
+    $recieverEmail = $data->email;
+    $subject = "The Dubai Life";
+    $body = "<h1>activating soon</h1>";
     
-    // $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
-    // $mailer->sendMail($recieverEmail,$subject,$body);
+    $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
+    $mailer->sendMail($recieverEmail,$subject,$body);
 
 include 'includes/header.php';
 include 'includes/navbar.php';

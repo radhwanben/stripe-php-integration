@@ -18,11 +18,12 @@ use PHPMailer\PHPMailer\PHPMailer;
             $this->senderEmail = $senderEmail;
             $this->password = $password;
             $this->SMTPhost = $SMTPhost;
+            $this->SMTP_PORT = $SMTP_PORT;
         }
-        public function sendMail($reciever,$subject = "Test subject",$body = "Test body"){
+        public function sendMail($reciever,$subject, $body){
             try{
             $mail = new PHPMailer(true);
-            $mail->SMTPDebug = 0;                               // Enable verbose debug output
+            $mail->SMTPDebug = 4;                               // Enable verbose debug output
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host =  $this->SMTPhost;                            // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -31,7 +32,7 @@ use PHPMailer\PHPMailer\PHPMailer;
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = $this->SMTP_PORT;                                    // TCP port to connect to
 
-            $mail->setFrom('contact@localhost.com', "support");
+            $mail->setFrom('admin@the-dubai-life.com', "The Dubai Life");
             $mail->addAddress($reciever);                     // Add a recipient
 
         
