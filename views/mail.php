@@ -1,8 +1,3 @@
-<?php
-
-include 'includes/header.php';
-
-?>
 <link rel="stylesheet" href="../assets/css/mail.css" />
 
     <section class="success">
