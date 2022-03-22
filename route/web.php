@@ -9,7 +9,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/cancel', 'views/cancel.php');
     // $r->addRoute('GET', '/success', 'views//success.php?session_id={CHECKOUT_SESSION_ID}');
     $r->addRoute('GET', '/success', 'views/success.php');
-    $r->addRoute('GET', '/mail', 'views/mail.html');
+    $r->addRoute('GET', '/mail', 'views/mail.phtml');
     $r->addRoute('POST', '/checkout', 'class/checking.php');
     $r->addRoute('POST', '/webhook', 'config/webhook.php');
 });
