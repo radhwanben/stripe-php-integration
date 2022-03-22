@@ -113,14 +113,14 @@ include 'includes/navbar.php';
           <div class="slink">
             <div class="fb-share-button" 
             
-                data-href="https://github.com/radhwanben/stripe-php-integration/blob/main/assets/images/finalgif.gif" 
+                data-href="http://dubailife3.herokuapp.com/assets/images/final-2.gif" 
                 data-layout="button">
             </div>
           </div>
           <div class="slink">
             <i class="fa-brands fa-whatsapp-square"></i>
               <a href=
-            "whatsapp://send?text=https://github.com/radhwanben/stripe-php-integration/blob/main/assets/images/finalgif.gif"
+            "whatsapp://send?text=http://dubailife3.herokuapp.com/assets/images/final-2.gif"
                     data-action="share/whatsapp/share"
                     target="_blank">
                  <p>whatsapp</p>
@@ -130,7 +130,7 @@ include 'includes/navbar.php';
           <div class="slink">
             <i class="fa-brands fa-twitter"></i>
            <a class="twitter-share-button"
-              href="https://twitter.com/intent/tweet?url=https://github.com/radhwanben/stripe-php-integration/blob/main/assets/images/finalgif.gif"
+              href="https://twitter.com/intent/tweet?url=http://dubailife3.herokuapp.com/assets/images/final-2.gif"
               data-size="large">
             <p>twitter</p>
            </a>
