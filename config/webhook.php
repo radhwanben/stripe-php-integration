@@ -168,6 +168,7 @@ switch ($event->type) {
     $body =str_replace('%phone%', $data->phone, $body);
     $body =str_replace('%num_tickets%', count($ticketlist), $body);
     $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
+    $html = '';
     for($i = 0; $i < 1; $i){
       $html .= '<tr style="align-items: center; display: flex; ">
       <td class="btn" valign="top" style="line-height: 0; padding: 3px 0 0;">
