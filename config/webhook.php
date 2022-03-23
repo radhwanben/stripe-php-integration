@@ -151,7 +151,7 @@ switch ($event->type) {
     // $ticketlist = generateTicketCodes($number_tickets);
     $ticketlist = getTickets($paymentIntent->customer);
     $metadata  = [
-      'tickets'=>json_encode($ticketlist),
+      // 'tickets'=>json_encode($ticketlist),
       'facture'=>$paymentIntent->charges->data[0]->receipt_url,
       'status'=>$paymentIntent->status,
       'number_of_tickets'=>count($ticketlist)
