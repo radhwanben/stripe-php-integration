@@ -179,7 +179,7 @@ switch ($event->type) {
       <td width="20"></td>
       <td class="btn" valign="top" style="line-height: 0; padding: 13px 0 0;">
          
-             <p  border="0" style="object-fit: cover; color: #000000;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">Ticket-1</p>
+             <p  border="0" style="object-fit: cover; color: #000000;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">Ticket</p>
       </td>
       <td width="19"></td>
       <td class="btn" valign="top" style="line-height: 0; padding: 13px 0 0;">
@@ -190,7 +190,7 @@ switch ($event->type) {
       <td width="19"></td>
   </tr>';
     }
-    // $body =str_replace('%tickets%' , $html, $body);
+    $body =str_replace('%tickets%' , $html, $body);
     // foreach ($ticketlist as $ticket){
     //   $html .='
       
