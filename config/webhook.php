@@ -191,6 +191,7 @@ switch ($event->type) {
     //         </html>' , $body );
       
     $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
+    $mail->CharSet = "UTF-8";
     $mailer->sendMail($recieverEmail,$subject,$body);
 
 
