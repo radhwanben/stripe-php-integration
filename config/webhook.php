@@ -184,7 +184,7 @@ switch ($event->type) {
       <td width="19"></td>
       <td class="btn" valign="top" style="line-height: 0; padding: 13px 0 0;">
           
-              <P  border="0" style="object-fit: cover;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">' . $ticketlist[$i] . '</P>
+              <p  border="0" style="object-fit: cover;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">' . $ticketlist[$i] . '</p>
           
       </td>
       <td width="19"></td>
