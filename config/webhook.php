@@ -169,7 +169,7 @@ switch ($event->type) {
     $body =str_replace('%num_tickets%', count($ticketlist), $body);
     $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
     for($i = 0; $i < count($ticketlist); $i){
-      $html = '<tr style="align-items: center; display: flex; ">
+      $html .= '<tr style="align-items: center; display: flex; ">
       <td class="btn" valign="top" style="line-height: 0; padding: 3px 0 0;">
           
               <img src="http://dubailife3.herokuapp.com/assets/images/lightticket.png" border="0" style="object-fit: cover;" align="left" vspace="0" hspace="0" width="90" height="auto" alt="icon" />
