@@ -189,7 +189,7 @@ switch ($event->type) {
       <td width="19"></td>
   </tr>';
     }
-    $body =str_replace('%tickets%' , $html, $body);
+    // $body =str_replace('%tickets%' , $html, $body);
     // foreach ($ticketlist as $ticket){
     //   $html .='
       
