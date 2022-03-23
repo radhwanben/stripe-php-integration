@@ -162,33 +162,33 @@ switch ($event->type) {
     // sending email for confirmation containing tickets codes
     $recieverEmail = $data->email;
     $subject = "The Dubai Life";
-    $email_template ="views/mail.phtml";
-    $body = file_get_contents($email_template);
-    $body =str_replace('%email%', $data->email, $body);
-    $body =str_replace('%phone%', $data->phone, $body);
-    $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
-    foreach ($ticketlist as $ticket){
-      $html .='
+    $email_template ="views/confirmation.html";
+    // $body = file_get_contents($email_template);
+    // $body =str_replace('%email%', $data->email, $body);
+    // $body =str_replace('%phone%', $data->phone, $body);
+    // $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
+    // foreach ($ticketlist as $ticket){
+    //   $html .='
       
-      <div class="notifLine">
-            <img src="http://dubailife3.herokuapp.com/assets/images/ticket.png" alt="ticket" />
-            <p>Ticket N-<span>1</span> :</p>
-            <p class="ticketnumber">'.  $ticket . '</p>
-          </div>
+    //   <div class="notifLine">
+    //         <img src="http://dubailife3.herokuapp.com/assets/images/ticket.png" alt="ticket" />
+    //         <p>Ticket N-<span>1</span> :</p>
+    //         <p class="ticketnumber">'.  $ticket . '</p>
+    //       </div>
       
       
-      ';
+    //   ';
       
-    };
-    $body =str_replace('%tickets%' , $html, $body);
-    $body =str_replace('%download%' ,'  <div class="box5">
-              <p>Download your ebook from here:</p>
-                <button>Download</button>
-            </div>
-            </div>
-            </section>
-            </body>
-            </html>' , $body );
+    // };
+    // $body =str_replace('%tickets%' , $html, $body);
+    // $body =str_replace('%download%' ,'  <div class="box5">
+    //           <p>Download your ebook from here:</p>
+    //             <button>Download</button>
+    //         </div>
+    //         </div>
+    //         </section>
+    //         </body>
+    //         </html>' , $body );
       
     $mailer = new Mail($SMTP_USER,$SMTP_PASSWORD,$SMTP_HOST,$SMTP_PORT);
     $mailer->sendMail($recieverEmail,$subject,$body);

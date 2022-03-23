@@ -23,6 +23,7 @@ class Ticket{
     
     public function ticketcodegenrator()
       {
+        // return uniqid('dubai-');
         $factory = new RandomLib\Factory;
         $generator = $factory->getMediumStrengthGenerator();
         $ticketcode = $generator->generateString(27, 'abcdefghijklmnopqrstuvwxyz234567');
