@@ -163,7 +163,7 @@ switch ($event->type) {
     $recieverEmail = $data->email;
     $subject = "The Dubai Life";
     $email_template ="views/confirmation.html";
-    // $body = file_get_contents($email_template);
+    $body = file_get_contents($email_template);
     // $body =str_replace('%email%', $data->email, $body);
     // $body =str_replace('%phone%', $data->phone, $body);
     // $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
