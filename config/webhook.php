@@ -162,11 +162,12 @@ switch ($event->type) {
     // sending email for confirmation containing tickets codes
     $recieverEmail = $data->email;
     $subject = "The Dubai Life";
-    $email_template ="views/confirmation.html";
+    $email_template ="views/email.html";
     $body = file_get_contents($email_template);
-    // $body =str_replace('%email%', $data->email, $body);
-    // $body =str_replace('%phone%', $data->phone, $body);
-    // $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
+    $body =str_replace('%email%', $data->email, $body);
+    $body =str_replace('%phone%', $data->phone, $body);
+    $body =str_replace('%num_tickets%', count($ticketlist), $body);
+    $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
     // foreach ($ticketlist as $ticket){
     //   $html .='
       
