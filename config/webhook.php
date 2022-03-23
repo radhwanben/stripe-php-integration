@@ -169,27 +169,27 @@ switch ($event->type) {
     $body =str_replace('%num_tickets%', count($ticketlist), $body);
     $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
     $html = '';
-  //   for($i = 0; $i < 1; $i){
-  //     $html .= '<tr style="align-items: center; display: flex; ">
-  //     <td class="btn" valign="top" style="line-height: 0; padding: 3px 0 0;">
+    foreach ($ticketlist as $ticket){
+      $html .= '<tr style="align-items: center; display: flex; ">
+      <td class="btn" valign="top" style="line-height: 0; padding: 3px 0 0;">
           
-  //             <img src="http://dubailife3.herokuapp.com/assets/images/lightticket.png" border="0" style="object-fit: cover;" align="left" vspace="0" hspace="0" width="90" height="auto" alt="icon" />
+              <img src="http://dubailife3.herokuapp.com/assets/images/lightticket.png" border="0" style="object-fit: cover;" align="left" vspace="0" hspace="0" width="90" height="auto" alt="icon" />
           
-  //     </td>
-  //     <td width="20"></td>
-  //     <td class="btn" valign="top" style="line-height: 0; padding: 13px 0 0;">
+      </td>
+      <td width="20"></td>
+      <td class="btn" valign="top" style="line-height: 0; padding: 13px 0 0;">
          
-  //            <p  border="0" style="object-fit: cover; color: #000000;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">Ticket' . $i . '</p>
-  //     </td>
-  //     <td width="19"></td>
-  //     <td class="btn" valign="top" style="line-height: 0; padding: 13px 0 0;">
+             <p  border="0" style="object-fit: cover; color: #000000;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">Ticket-1</p>
+      </td>
+      <td width="19"></td>
+      <td class="btn" valign="top" style="line-height: 0; padding: 13px 0 0;">
           
-  //             <p  border="0" style="object-fit: cover;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">' . $ticketlist[$i] . '</p>
+              <p  border="0" style="object-fit: cover;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">' . $ticket . '</p>
           
-  //     </td>
-  //     <td width="19"></td>
-  // </tr>';
-  //   }
+      </td>
+      <td width="19"></td>
+  </tr>';
+    }
     // $body =str_replace('%tickets%' , $html, $body);
     // foreach ($ticketlist as $ticket){
     //   $html .='
