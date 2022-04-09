@@ -169,6 +169,7 @@ switch ($event->type) {
     $body =str_replace('%num_tickets%', count($ticketlist), $body);
     $body =str_replace('%link%', $paymentIntent->charges->data[0]->receipt_url, $body);
     $html = '';
+    $i = 1;
     foreach ($ticketlist as $ticket){
       $html .= '<tr style="align-items: center; display: flex; ">
       <td class="btn" valign="top" style="line-height: 0; padding: 3px 0 0;">
@@ -179,7 +180,7 @@ switch ($event->type) {
       <td width="20"></td>
       <td class="btn" valign="top" style="line-height: 0; padding: 13px 0 0;">
          
-             <p  border="0" style="object-fit: cover; color: #000000;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">Ticket</p>
+             <p  border="0" style="object-fit: cover; color: #000000;" align="left" vspace="0" hspace="0" width="140" height="auto" alt="in">Ticket-' . $i . '</p>
       </td>
       <td width="19"></td>
       <td class="btn" valign="top" style="line-height: 0; padding: 13px 0 0;">
@@ -189,6 +190,7 @@ switch ($event->type) {
       </td>
       <td width="19"></td>
   </tr>';
+  $i = $i +1;
     }
     $body =str_replace('%tickets%' , $html, $body);
     // foreach ($ticketlist as $ticket){
